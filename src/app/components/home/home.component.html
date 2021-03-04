@@ -1,0 +1,131 @@
+<div style="padding: 1%;">
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+</div>
+<h1 class="display-4" style="text-align: center;">Corona Covid-19 Tracker</h1>
+<!--<div class="jumbotron bg-white text-center p-0 m-0">
+    
+    <div class="row">
+        <div class="card col p-3 m-3">
+            <div class="ui statistics">
+                <div class="black statistic">
+                  <div class="label">
+                    <h3>Confirmed</h3>
+                  </div>
+                  <div class="value">
+                    {{totalConfirmed|number}}
+                  </div>
+                </div>
+             </div>
+        </div>
+        
+        <div class="card col p-3 m-3">
+            <div class="ui statistics">
+                <div class="green statistic">
+                  <div class="label">
+                    <h3>Recovered</h3>
+                  </div>
+                  <div class="value">
+                    {{totalRecovered|number}}
+                  </div>
+                </div>
+             </div>
+        </div>
+        <div class="card col p-3 m-3">
+            <div class="ui statistics">
+                <div class="red statistic">
+                  <div class="label">
+                    <h3>Deaths</h3>
+                  </div>
+                  <div class="value">
+                    {{totalDeaths|number}}
+                  </div>
+                </div>
+             </div>
+        </div>
+        <div class="card col p-3 m-3">
+            <div class="ui statistics">
+                <div class="blue statistic">
+                  <div class="label">
+                    <h3>Active</h3>
+                  </div>
+                  <div class="value">
+                    {{totalActive|number}}
+                  </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <app-dashboard-card  [totalConfirmed]='totalConfirmed|number' [totalActive]='totalActive|number' [totalRecovered]='totalRecovered|number' [totalDeaths]='totalDeaths|number'></app-dashboard-card>
+</div>-->
+<div class="card-title">
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">CONFIRMED</div>
+  <div class="card-body">
+    <p class="card-text">{{totalConfirmed|number}}</p>
+  </div>
+</div>
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">ACTIVE</div>
+  <div class="card-body">
+    <p class="card-text">{{totalActive|number}}</p>
+  </div>
+</div>
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header">RECOVERED</div>
+  <div class="card-body">
+    <p class="card-text">{{totalRecovered|number}}</p>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">DEATHS</div>
+  <div class="card-body">
+    <p class="card-text">{{totalDeaths|number}}</p>
+  </div>
+</div>
+</div>
+
+
+<div class="ui form">
+    <div class="inline fields">
+      <div class="radio1">
+        <label class="label1" for="fruit">Select Case Type :</label>
+        <div class= radio2>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" id='c' #c (click)='updateChart(c)' value="c" name="casetype" checked="" tabindex="0" class="hidden">
+                <label for='c'>Confirmed</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" value='d' #d (click)='updateChart(d)' id='d' name="casetype" tabindex="0" class="hidden">
+                <label for='d'>Deaths</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" value='r' #r (click)='updateChart(r)' id='r' name="casetype" tabindex="0" class="hidden">
+                <label for='r'>Recovered</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input id='a' #a type="radio" (click)='updateChart(a)' value='a' name="casetype" tabindex="0" class="hidden">
+                <label for='a'>Active</label>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+        <div class="col">
+            <google-chart [data]="columnChart"></google-chart>
+        </div>
+        <div class="col">
+            <google-chart [data]="pieChart"></google-chart>
+        </div>
+    </div>
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">

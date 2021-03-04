@@ -1,0 +1,87 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.totalConfirmed{
+    background-color: blue;
+}
+.total1{
+    background-color: blue;
+}
+.ui{
+    text-align: center;
+}
+.display-4{
+    text-align: center;
+}
+.jumbotron{
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+    .display-4 {
+text-align: center;    
+         }
+
+        .row{
+            align-items: center;
+            text-align: center;
+        }
+            
+  }
+  .card-title{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 40px 10px 10px 10px;
+  }
+  .card{
+      width: 300px;
+      height: 150px;
+      align-items: center;
+      transition: all .2s ease-in-out;
+
+  }
+  .card:hover{
+    transform: scale(1.1);
+  }
+  .card-header{
+      font-size: 20px;
+      text-align: center;
+      height: 50px;
+      width:100%;
+      justify-content: center;
+      display: flex; 
+      align-items: center;
+
+  }
+  .card-body{
+      font-size: 30px;
+      justify-content: center;
+      align-items: center;
+      justify-content: center;
+      display: flex; 
+      text-align: center;
+
+  }
+
+  .radio1{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px 0 0 60px;
+
+  }
+  .radio2{
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 10px;
+  }
+  .label1{
+    font-size: 20px;
+  }
+
+
